@@ -9,7 +9,7 @@ const Card = ({ pokemon }: CardProps) => {
       <div className="md:flex">
         <div className="md:shrink-0">
           <img
-            className="h-48 w-full object-contain md:h-full md:w-64"
+            className="h-48 w-full object-contain md:h-full md:w-64 bg-zinc-50"
             src={sprites.other["official-artwork"].front_default}
             alt={name}
           />

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import pokemonService from "@/services/pokemonService";
-import type { PokemonDetail } from "@/services/pokemonService.types";
+import pokemonService from "@services/pokemonService";
+import type { PokemonDetail } from "@services/pokemonService.types";
 
 const usePokemon = () => {
   const [pokemons, setPokemons] = useState<PokemonDetail[]>([]);

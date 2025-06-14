@@ -13,7 +13,9 @@ export const LazyLoad = ({
   loadMoreItems,
   children,
 }: LazyLoadProps) => {
-    const observerRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>;
+  const observerRef = useRef<HTMLDivElement>(
+    null
+  ) as React.RefObject<HTMLDivElement>;
   const [isLoaded, setIsLoaded] = useState(initLoaded);
 
   useEffect(() => {
