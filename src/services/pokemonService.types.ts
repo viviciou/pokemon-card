@@ -24,7 +24,19 @@ type GameIndice = {
   };
 };
 type GameIndices = GameIndice[];
-type HeldItems = any;
+type HeldItems = {
+  item: {
+    name: string;
+    url: string;
+  };
+  version_details: {
+    rarity: number;
+    version: {
+      name: string;
+      url: string;
+    };
+  }[];
+};
 type VersionGroupDetail = {
   level_learned_at: number;
   move_learn_method: {

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import pokemonService from "../service/pokemonService";
-import type { PokemonDetail } from "../service/pokemonService.types";
+import { useCallback, useEffect, useState } from "react";
+import pokemonService from "@services/pokemonService";
+import type { PokemonDetail } from "@services/pokemonService.types";
 
 const usePokemon = () => {
   const [pokemons, setPokemons] = useState<PokemonDetail[]>([]);
@@ -10,6 +10,11 @@ const usePokemon = () => {
     return pokemonDetails;
   };
 
+  const updatePokemons = useCallback(async (offset: number) => {
+    const newPokemons = await fetchPokemons(offset);
+    setPokemons((prevPokemons) => [...prevPokemons, ...newPokemons]);
+  }, []);
+
   useEffect(() => {
     const fetchAndSetPokemons = async () => {
       const data = await fetchPokemons(0);
@@ -18,6 +23,6 @@ const usePokemon = () => {
     fetchAndSetPokemons();
   }, []);
 
-  return { pokemons, setPokemons };
+  return { pokemons, setPokemons, updatePokemons };
 };
 export default usePokemon;

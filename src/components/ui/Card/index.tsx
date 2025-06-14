@@ -1,34 +1,35 @@
-import type { PokemonDetail } from "../../service/pokemonService.types";
+import type { PokemonDetail } from "@services/pokemonService.types";
 
 type CardProps = { pokemon: PokemonDetail };
 
 const Card = ({ pokemon }: CardProps) => {
+  const { id, name, sprites, types } = pokemon;
   return (
     <div className="mx-auto max-w-md overflow-hidden rounded-xl bg-white shadow-md md:max-w-2xl hover:drop-shadow-md">
       <div className="md:flex">
         <div className="md:shrink-0">
           <img
-            className="h-48 w-full object-contain md:h-full md:w-64"
-            src={pokemon.sprites.other["official-artwork"].front_default}
-            alt={pokemon.name}
+            className="h-48 w-full object-contain md:h-full md:w-64 bg-zinc-50"
+            src={sprites.other["official-artwork"].front_default}
+            alt={name}
           />
         </div>
         <div className="p-8 bg-zinc-50">
           <div className="text-sm font-semibold tracking-wide text-indigo-500 uppercase">
-            {pokemon.id}
+            {id}
           </div>
           <a
             href="#"
             className="mt-1 block text-lg leading-tight font-medium text-black hover:underline"
           >
-            {pokemon.name}
+            {name}
           </a>
           <div className="flex items-center mt-2">
-            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-            <img src={pokemon.sprites.back_default} alt={pokemon.name} />
+            <img src={sprites.front_default} alt={name} />
+            <img src={sprites.back_default} alt={name} />
           </div>
           <p className="mt-2 text-gray-500 ">
-            {pokemon.types.map((type) => type.type.name).join(", ")}
+            {types.map((type) => type.type.name).join(", ")}
           </p>
         </div>
       </div>
