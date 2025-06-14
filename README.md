@@ -27,13 +27,23 @@ pokemon-card/
 │   ├── assets/
 │   │   └── react.svg
 │   ├── components/
-│   │   └── Card/
-│   │       └── index.tsx
+│   │   └── LazyLoad/
+│   │       ├── index.tsx
+│   │       └── lazy-load.type.ts
+│   │   └── ui/
+│   │       ├── Card/
+│   │       │   └── index.tsx
+│   │       └── SkeletonLoading/
+│   │           └── index.tsx
 │   ├── hooks/
 │   │   └── usePokemon.tsx
-│   └── service/
-│       ├── pokemonService.ts
-│       └── pokemonService.types.ts
+│   ├── pages/
+│   │   └── PokemonList.tsx
+│   ├── services/
+│   │   ├── pokemonService.ts
+│   │   └── pokemonService.types.ts
+│   └── utils/
+│       └── alias-path.ts
 ├── index.html
 ├── package.json
 ├── tsconfig.json
